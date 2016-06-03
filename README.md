@@ -1,6 +1,6 @@
-#Screendesign Presenter
+#screens: Screendesign Presenter
 
-With this tool, you can easily present your screen designs. You can present either complete designs or desings who are split into separate images. Just add the elements in `<div id="wrapper"></div>` and you are done.
+With this tool, you can easily present your screen designs. You can present either complete designs or desings who are split into separate images. Just create a project folder in /screens and add your designs. Now you can access your project for presentation via /project-name.
 
 ##Keyboard control
 Key     | Action

@@ -1,9 +1,4 @@
 <?php
-$putenv = putenv('LC_ALL=de_DE');
-setlocale(LC_ALL, 'de_DE.UTF-8');
-bindtextdomain("screens", "./locale");
-textdomain("screens");
-
 /**
  *	Read all files from folder
  */
@@ -34,6 +29,21 @@ function getFiles($dir = ".", $ending = NULL) {
 		sort($return);
 	return $return;
 }
+
+// Localization
+$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+switch ($lang){
+    case "de":
+        $locale = "de_DE";
+        break;        
+    default:
+        $locale = "en_US";
+        break;
+}
+putenv('LC_ALL=' . $locale);
+setlocale(LC_ALL, $locale . '.UTF-8');
+bindtextdomain("screens", "./locale");
+textdomain("screens");
 ?>
 <!DOCTYPE html>
 <html>
