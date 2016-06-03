@@ -1,0 +1,83 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Screens\n"
+"POT-Creation-Date: 2016-06-03 14:34+0200\n"
+"PO-Revision-Date: 2016-06-03 14:56+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.8\n"
+"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: index.php:46
+msgid "Previous Screen"
+msgstr "Vorheriger Screen"
+
+#: index.php:47
+msgid "Next Screen"
+msgstr "Nächster Screen"
+
+#: index.php:53
+msgid "Welcome"
+msgstr "Willkommen"
+
+#: index.php:54
+msgid "Use the following keys to navigate between the screens"
+msgstr "Nutzen Sie diese Tasten zur Navigation"
+
+#: index.php:58
+msgid "Go one slide back"
+msgstr "Ein Screen zurück"
+
+#: index.php:60
+msgid "Go one slide forward"
+msgstr "Ein Screen vorwärts"
+
+#: index.php:62
+msgid "Go to the first slide"
+msgstr "Erster Screen"
+
+#: index.php:64
+msgid "Go to the last slide"
+msgstr "Letzter Screen"
+
+#: index.php:68
+msgid "Show/hide this screen"
+msgstr "Info-Bildschirm öffnen/schließen"
+
+#: index.php:70
+msgid "Show/hide the navigation"
+msgstr "Navigation ein-/ausblenden"
+
+#: index.php:72
+msgid "Go to the corresponding slide. 0 is slide number 10."
+msgstr "Gehe zur Folie mit Nummer ..."
+
+#: index.php:74
+msgid "Toggle the capture mode. This mode is great for screenshots."
+msgstr "Screenshot-Modus de-/aktivieren"
+
+#: index.php:77
+msgid "space"
+msgstr "Leertaste"
+
+#: index.php:79
+msgid "Next Step"
+msgstr "Nächster Screen"
+
+#: index.php:80
+msgid ""
+"Hide this message or go to the next slide. <br />If you are on the last "
+"slide, it returns to the first slide."
+msgstr ""
+"Info-Bildschirm ausblenden. Gehe zum nächsten Screen.<br>Springt zum ersten "
+"Screen, wenn letzter Screen erreicht ist."
+
+#: index.php:97
+msgid "Please define a project."
+msgstr "Bitte wählen Sie ein Projekt."

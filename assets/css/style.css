@@ -21,11 +21,27 @@ img{display:block;}
 }
 #intro .key{font-weight:normal;display:inline-block;padding:5px 5px 0;border:1px solid #888;height:30px;width:30px;text-align:center;border-radius:3px;margin:10px 0 5px;background:rgba(0,0,0,0.5)}
 #intro .widekey{width:auto;}
-#intro .space{width:150px;}
+#intro .space{width:400px;}
 #wrapper{position:relative;overflow-x:hidden;overflow-y:scroll;}
 #wrapper > *{display:none;position:absolute;top:0;left:50%;}
 #wrapper > * img {margin:0 auto;}
-#controls{position:fixed;left:0;bottom:0;padding:5px;min-width:50px;z-index:1;background:white;border-radius:0 4px 0 0;box-shadow:0 0 4px rgba(0,0,0,0.1);text-align:center;}
+
+#controls, #screen_info {position:fixed;bottom:0;padding:5px;min-width:50px;z-index:1;background:white;box-shadow:0 0 4px rgba(0,0,0,0.1);text-align:center;}
+#controls {
+	left:0;
+	border-radius: 0 4px 0 0;
+}
+#screen_info {
+	right: 0;
+	border-radius: 4px 0 0 0;
+	height: 32px;
+    padding: 10px;
+    max-width: 300px;
+}
+	#screen_info p {
+		font-weight: bold;
+		line-height: 19px;
+	}
 #controls p{margin:0 10px 5px;}
 #controls a{display:inline-block;position:relative;width:10px;height:10px;background:#ccc;border:1px solid #bbb;border-radius:50%;margin:0 5px;padding:4px;text-decoration:none;}
 #controls a:hover{background:#777;border-color:#555;}
@@ -39,4 +55,8 @@ img{display:block;}
 	#wrapper{position:static;overflow-x:auto;overflow-y:auto;}
 }
 .capture #wrapper{position:static;overflow-x:auto;overflow-y:auto;}
-.capture #controls,.capture #intro {display: none;}
+.capture #controls,
+.capture #intro,
+.capture #screen_info {
+	display: none;
+}

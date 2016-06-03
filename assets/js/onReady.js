@@ -22,6 +22,9 @@ var wrapper,elements,showElementTimer;
 		$('#next').toggleClass('disabled', lastElement);
 		$('#act').text(newScreen);
 		location.hash = newScreen;
+
+		// Show screen desciption in bottom right corner
+		$('#screen_info>p').text(elements.eq(newScreen - 1).attr("alt"));
 	};
 
 	// Set the margins for all Elements
@@ -44,7 +47,11 @@ var wrapper,elements,showElementTimer;
 	// More than one Screen
 	if (elementsLength > 1) {
 		// Add Navigation
-		body.append('<div id="controls"><p><span id="act"></span> | ' + elementsLength + '</p><a href="#" id="prev" title="Previous Screen"></a><a href="#" id="next" title="Next Screen"></a></div>');
+		body.append('<div id="controls">' + 
+			'<p><span id="act"></span> | ' + elementsLength + '</p>' + 
+			'<a href="#" id="prev" title="' + locale["previousScreen"] + '"></a>' + 
+			'<a href="#" id="next" title="' + locale["nextScreen"] + '"></a>' + 
+		'</div>');
 
 		$('#controls a').click(function (e) {
 			e.preventDefault();
@@ -79,6 +86,7 @@ var wrapper,elements,showElementTimer;
 			} else if (e.which == 78) {
 				// n: Show/Hide Navigation
 				$('#controls').fadeToggle('slow');
+				$('#screen_info').fadeToggle('slow');
 			} else if ((47 < e.which && e.which < 58) || (95 < e.which && e.which < 106)) {
 				// Numbers
 				switch (e.which) {
