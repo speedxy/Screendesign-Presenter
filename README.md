@@ -13,3 +13,6 @@ esc     | Show/hide this message
 space   | Next Step (Hide this message or go to the next slide. If you are on the last slide, it returns to the first slide.)
 n       | Show/hide the navigation
 0 - 9   | Go to the corresponding slide. 0 is slide number 10.
+
+##ToDo
+* Tablet compatibility and support of touch-screens (e.g. navigation with slide/swipe gestures)

@@ -6,6 +6,8 @@ function getFiles($dir = ".", $ending = NULL) {
 	if(!is_dir($dir))
 		return false;
 	$verz = @opendir($dir);
+
+	$return = array();
 	while($files = @readdir($verz)) {
 		if($files[0] == "." || is_dir($dir . "/" . $files))
 			continue;
@@ -25,7 +27,7 @@ function getFiles($dir = ".", $ending = NULL) {
 			continue;
 		}
 	}
-	if($return)
+	if(count($return))
 		sort($return);
 	return $return;
 }
@@ -44,6 +46,9 @@ putenv('LC_ALL=' . $locale);
 setlocale(LC_ALL, $locale . '.UTF-8');
 bindtextdomain("screens", "./locale");
 textdomain("screens");
+
+// Read project
+$project = $_GET["project"];
 ?>
 <!DOCTYPE html>
 <html>
@@ -51,6 +56,21 @@ textdomain("screens");
 	<meta charset="utf-8">
 	<title>screens: Screendesign-Presenter</title>
 	<link href="/assets/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+	<?php
+		switch(basename($project)){
+			case "mobile":
+				?>
+					<style>
+						#controls, #screen_info { display: none; }
+					</style>
+					<meta name="viewport" content="width=320, initial-scale=1.0, user-scalable=yes">
+				<?php
+			case "tablet":
+				
+				break;
+		}
+		//<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+	?>
 	<script>
 		var locale = {
 			previousScreen: '<?=_("Previous Screen")?>',
@@ -58,7 +78,7 @@ textdomain("screens");
 		};
 	</script>
 </head>
-<body data-show-intro="true">
+<body data-show-intro="false">
 	<div id="intro">
 		<h1><?=_("Welcome")?></h1>
 		<p><?=_("Use the following keys to navigate between the screens")?>:</p>
@@ -92,12 +112,20 @@ textdomain("screens");
 			</dl>
 		</div>
 	</div>
-	<div id="wrapper">
+	<?php
+		switch(basename($project)){
+			case "mobile":
+			case "tablet":
+				break;
+			default:
+				echo '<div id="wrapper">';
+				break;
+		}
+	?>
 		<?php
-		$project = basename($_GET["project"]);
 		$dir = realpath(__DIR__ . "/screens/" . $project . "/") . "/";
-		$files = getFiles($dir, array(".jpg", ".png"));
-		if($files){
+		$files = getFiles($dir, array(".jpg", ".jpeg", ".png"));
+		if(count($files)){
 			foreach($files as $file) {
 				// Read image dimensions
 				$size = getimagesize($dir . $file);
@@ -114,7 +142,16 @@ textdomain("screens");
 			<?php
 		}
 		?>
-	</div>
+	<?php
+		switch(basename($project)){
+			case "mobile":
+			case "tablet":
+				break;
+			default:
+				echo '</div>';
+				break;
+		}
+	?>
 	<div id="screen_info"><p></p></div>
 	<script type="text/javascript" src="/assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="/assets/js/browser.js"></script>

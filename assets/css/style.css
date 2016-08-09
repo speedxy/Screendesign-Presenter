@@ -10,6 +10,7 @@ body{
 }
 img{
 	display:block;
+	margin: 0 auto;
 }
 
 /* ID-Elements */
@@ -34,7 +35,11 @@ img{
 #intro .key{font-weight:normal;display:inline-block;padding:5px 5px 0;border:1px solid #888;height:30px;width:30px;text-align:center;border-radius:3px;margin:10px 0 5px;background:rgba(0,0,0,0.5)}
 #intro .widekey{width:auto;}
 #intro .space{width:400px;}
-#wrapper{position:relative;overflow-x:hidden;overflow-y:scroll;}
+#wrapper {
+	position:relative;
+	overflow-x:hidden;
+	overflow-y:scroll;
+}
 #wrapper > *{display:none;position:absolute;top:0;left:50%;}
 #wrapper > * img {margin:0 auto;}
 
