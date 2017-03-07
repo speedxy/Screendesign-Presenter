@@ -8,7 +8,6 @@ Needs PHP yaml-extension:
 
 ```
 extension=yaml.so
-
 ```
 
 ## Usage
