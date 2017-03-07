@@ -49,6 +49,17 @@ textdomain("screens");
 
 // Read project
 $project = $_GET["project"];
+$dir = realpath(__DIR__ . "/screens/" . $project . "/") . "/";
+
+// Read project configuration
+$config_file = $dir . "config.yaml";
+$CONFIG = array("style" => array(
+		"bg" => "#FFFFFF"
+	)
+);
+if(file_exists($config_file)){
+	$CONFIG = array_replace_recursive($CONFIG, yaml_parse_file($config_file));
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -77,6 +88,11 @@ $project = $_GET["project"];
 			nextScreen: '<?=_("Next Screen")?>'
 		};
 	</script>
+	<style>
+		body {
+			background-color: <?=$CONFIG["style"]["bg"]?>;
+		}
+	</style>
 </head>
 <body data-show-intro="false">
 	<div id="intro">
@@ -121,9 +137,7 @@ $project = $_GET["project"];
 				echo '<div id="wrapper">';
 				break;
 		}
-	?>
-		<?php
-		$dir = realpath(__DIR__ . "/screens/" . $project . "/") . "/";
+
 		$files = getFiles($dir, array(".jpg", ".jpeg", ".png"));
 		if(count($files)){
 			foreach($files as $file) {
